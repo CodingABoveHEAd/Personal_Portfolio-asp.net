@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YourProjectNamespace.Models
+namespace Personal_Portfolio2.Models
 {
     public class ContactMessage
     {
