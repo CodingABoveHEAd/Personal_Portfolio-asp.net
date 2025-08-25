@@ -4,15 +4,14 @@ using Personal_Portfolio2.Models;
 
 namespace Personal_Portfolio2.Controllers
 {
-    public class HomeController : Controller
+    public class ProjectsController : Controller
     {
         private PortfolioContext db = new PortfolioContext();
 
         public ActionResult Index()
         {
-            ViewBag.Skills = db.Skills.ToList();
-            ViewBag.Educations = db.Educations.ToList();
-            return View();
+            var projects = db.Projects.ToList();
+            return View(projects);
         }
     }
 }
