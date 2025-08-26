@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202508260044442_InitialCreate.Designer.cs">
       <DependentUpon>202508260044442_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202508260341205_AddProjectTags.cs" />
+    <Compile Include="Migrations\202508260341205_AddProjectTags.Designer.cs">
+      <DependentUpon>202508260341205_AddProjectTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -197,6 +201,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Projects.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -286,6 +291,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202508260044442_InitialCreate.resx">
       <DependentUpon>202508260044442_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202508260341205_AddProjectTags.resx">
+      <DependentUpon>202508260341205_AddProjectTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -349,7 +349,7 @@ header {
     border: 1px solid rgba(220, 38, 38, 0.2);
     position: relative;
     overflow: hidden;
-    animation: heroFadeIn 3s ease-out;
+    animation: heroFadeIn 2s ease-out;
 }
 
 @keyframes heroFadeIn {
@@ -399,8 +399,10 @@ header {
     z-index: 2;
     background: linear-gradient(135deg, #ffffff 0%, #dc2626 50%, #ffffff 100%);
     background-size: 200% 100%;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: textShimmer 10s ease-in-out infinite, titleSlideUp 5s ease-out;
+    background-clip: text;
+    animation: textShimmer 15s ease-in-out infinite, titleSlideUp 3s ease-out;
 }
 
 @keyframes textShimmer {
@@ -415,7 +417,7 @@ header {
 
 @keyframes titleSlideUp {
     from {
-        transform: translateY(40px);
+        transform: translateY(80px);
         opacity: 0;
     }
 

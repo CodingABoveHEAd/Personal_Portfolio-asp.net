@@ -1,22 +1,66 @@
 ﻿@model IEnumerable<Personal_Portfolio2.Models.Project>
-
 @{
     ViewBag.Title = "Projects";
 }
 
-<h2>Projects</h2>
+@section Styles {
+    <link href="~/Content/Projects.css" rel="stylesheet" />
+}
 
-<table class="table">
-    <tr>
-        <th>Project Name</th>
-        <th>Description</th>
-    </tr>
+<div class="page-header">
+    <h1>My Projects</h1>
+    <p>Explore my latest work and creative solutions</p>
+</div>
 
-    @foreach (var item in Model)
+<div class="projects-grid">
+    @if (Model != null && Model.Any())
     {
-        <tr>
-            <td>@item.Title</td>
-            <td>@item.Description</td>
-        </tr>
+        int index = 0;
+        foreach (var item in Model)
+        {
+            <div class="project-card" style="animation-delay: @(index * 0.15)s">
+                <div class="project-card-inner">
+                    <div class="project-header">
+                        <h3>@item.Title</h3>
+                        <div class="project-icon">
+                            <span>⚡</span>
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <p>@item.Description</p>
+                    </div>
+                    <div class="project-footer">
+
+                        <div class="project-tech">
+                            @if (item.TagsList != null && item.TagsList.Any())
+                            {
+                                foreach (var tag in item.TagsList)
+                                {
+                                    <span class="tech-badge">@tag</span>
+                                }
+                            }
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(item.Url))
+                        {
+                            <a href="@item.Url" target="_blank" class="project-link">
+                                <span>View Project</span>
+                                <i class="arrow">→</i>
+                            </a>
+                        }
+                    </div>
+
+                </div>
+            </div>
+            index++;
+        }
     }
-</table>
+    else
+    {
+        <div class="no-projects">
+            <div class="no-projects-icon">📂</div>
+            <h3>No Projects Yet</h3>
+            <p>Projects will appear here once they're added to your portfolio.</p>
+        </div>
+    }
+</div>
