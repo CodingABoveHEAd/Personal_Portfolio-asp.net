@@ -1,11 +1,22 @@
 ﻿@model IEnumerable<Personal_Portfolio2.Models.Project>
 
-<h2>My Projects</h2>
-@foreach (var project in Model)
-{
-    <div class="project-card">
-        <h3>@project.Title</h3>
-        <p>@project.Description</p>
-        <a href="@project.Url" target="_blank">View Project</a>
-    </div>
+@{
+    ViewBag.Title = "Projects";
 }
+
+<h2>Projects</h2>
+
+<table class="table">
+    <tr>
+        <th>Project Name</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+        </tr>
+    }
+</table>
