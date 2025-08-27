@@ -201,6 +201,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Contact.css" />
     <Content Include="Content\Projects.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

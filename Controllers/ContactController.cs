@@ -1,5 +1,5 @@
-﻿using System.Web.Mvc;
-using Personal_Portfolio2.Models;
+﻿using Personal_Portfolio2.Models;
+using System.Web.Mvc;
 
 namespace Personal_Portfolio2.Controllers
 {
@@ -7,27 +7,25 @@ namespace Personal_Portfolio2.Controllers
     {
         private PortfolioContext db = new PortfolioContext();
 
-        [HttpGet]
+        // GET: Contact
         public ActionResult Index()
         {
             return View();
         }
 
+        // POST: Contact
         [HttpPost]
-        public ActionResult Index(ContactMessage message)
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(ContactMessage contact)
         {
             if (ModelState.IsValid)
             {
-                db.ContactMessages.Add(message);
+                db.ContactMessages.Add(contact);  // save to DB
                 db.SaveChanges();
-                return RedirectToAction("Thanks");
+                ViewBag.Message = "Your message has been sent successfully!";
+                return View();
             }
-            return View(message);
-        }
-
-        public ActionResult Thanks()
-        {
-            return View();
+            return View(contact);
         }
     }
 }
