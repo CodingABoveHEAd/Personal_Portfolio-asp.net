@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Personal_Portfolio2.Models.Education>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Education";
+}
+@section Styles {
+    <link href="~/Content/Education.css" rel="stylesheet" />
+}
+<section class="education-section">
+    <h2>My Education</h2>
+    <div class="education-list">
+        @if (Model != null && Model.Any())
+        {
+            <ul>
+                @foreach (var edu in Model)
+                {
+                    <li>
+                        <h3>@edu.Institute</h3>
+                        <p>@edu.Degree</p>
+                        <span>@edu.Year</span>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No education records found.</p>
+        }
+    </div>
+</section>
