@@ -35,11 +35,10 @@
 </div>
 
 <script>
-    // Add dynamic progress bar animation
+
     document.addEventListener('DOMContentLoaded', function () {
         const progressBars = document.querySelectorAll('.progress-bar');
 
-        // Intersection Observer for scroll-triggered animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

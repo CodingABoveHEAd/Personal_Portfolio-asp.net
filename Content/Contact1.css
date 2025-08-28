@@ -325,7 +325,6 @@ textarea.form-control {
     box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.2) !important;
 }
 
-/* Success Message - Matching theme colors */
 .contact-section p[style*="color:green"] {
     background: rgba(15, 15, 15, 0.9) !important;
     backdrop-filter: blur(20px);
@@ -461,9 +460,9 @@ textarea.form-control {
     }
 }
 
-/* Focus states for accessibility - matching main theme */
 .form-control:focus,
 .btn-submit:focus {
     outline: 2px solid rgba(220, 38, 38, 0.6);
     outline-offset: 2px;
 }
+
