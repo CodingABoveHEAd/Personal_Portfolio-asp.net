@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin Dashboard";
+}
+<h2>Admin Dashboard</h2>
+
+<p>Total Projects: <strong>@ViewBag.ProjectCount</strong></p>
+<p>Total Contact Messages: <strong>@ViewBag.MessageCount</strong></p>
+
+<p>
+    @Html.ActionLink("Manage Projects", "Projects", "Admin", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("View Messages", "Messages", "Admin", null, new { @class = "btn btn-secondary", style = "margin-left:10px;" })
+</p>
+<p>
+    @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "btn btn-link" })
+</p>

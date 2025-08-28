@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Personal_Portfolio2.Models.ContactMessage>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact Messages";
+}
+<h2>Contact Messages</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.Id</td>
+                <td>@m.Name</td>
+                <td>@m.Email</td>
+                <td>@m.Message</td>
+            </tr>
+        }
+    </tbody>
+</table>

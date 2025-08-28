@@ -1,0 +1,15 @@
+﻿@model Personal_Portfolio2.Models.Project
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit Project";
+}
+<h2>Edit Project</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.Id)
+    @Html.EditorForModel()
+    <button type="submit" class="btn btn-primary">Update</button>
+    @Html.ActionLink("Back", "Projects", "Admin", null, new { @class = "btn btn-link" })
+}

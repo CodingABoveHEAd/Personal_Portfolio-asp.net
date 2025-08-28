@@ -1,0 +1,14 @@
+﻿@model Personal_Portfolio2.Models.Project
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create Project";
+}
+<h2>Create Project</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel()
+    <button type="submit" class="btn btn-success">Save</button>
+    @Html.ActionLink("Back", "Projects", "Admin", null, new { @class = "btn btn-link" })
+}

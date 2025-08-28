@@ -17,12 +17,22 @@
     <!-- Navbar -->
     <header>
         <nav>
-            <ul class="navbar">
+            <ul>
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Education", "Index", "Education")</li>
                 <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
                 <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
                 <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+
+                @if (Session["IsAdmin"] as bool? == true)
+                {
+                    <li>@Html.ActionLink("Admin", "Dashboard", "Admin")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Admin", "Login", "Account")</li>
+                }
             </ul>
         </nav>
     </header>
@@ -38,5 +48,6 @@
         <p>&copy; @DateTime.Now.Year - Niloy Chowdhury Portfolio</p>
     </footer>
 
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
