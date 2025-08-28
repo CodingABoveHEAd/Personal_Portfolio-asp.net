@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Personal_Portfolio2.Models.Skill>
+@{
+    ViewBag.Title = "My Skills";
+}
+@section Styles {
+    <link href="~/Content/Skills.css" rel="stylesheet" />
+}
+
+<div class="skills-container">
+    <!-- Skills Header -->
+    <div class="skills-header">
+        <h2>My Skills</h2>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+        @foreach (var skill in Model)
+        {
+            <div class="skill-item">
+                <div class="skills-decorator"></div>
+
+                <!-- Skill Label and Percentage -->
+                <div class="skill-label">
+                    <span>@skill.Name</span>
+                    <span class="skill-percentage">@skill.Level%</span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar" style="--progress-width: @skill.Level%;"></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    // Add dynamic progress bar animation
+    document.addEventListener('DOMContentLoaded', function () {
+        const progressBars = document.querySelectorAll('.progress-bar');
+
+        // Intersection Observer for scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const width = progressBar.style.getPropertyValue('--progress-width');
+                    progressBar.style.width = width;
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        progressBars.forEach(bar => {
+            observer.observe(bar);
+        });
+    });
+</script>

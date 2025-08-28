@@ -1,9 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+
 namespace Personal_Portfolio2.Models
-.Models
 {
-    public class Skill
+   public class Skill
     {
         [Key]
         public int Id { get; set; }
@@ -11,6 +14,7 @@ namespace Personal_Portfolio2.Models
         [Required]
         public string Name { get; set; }
 
-        public int Level { get; set; } // 1–10 scale
+        public int Level { get; set; } //in %
     }
 }
+
