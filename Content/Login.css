@@ -1,0 +1,154 @@
+﻿/* Simple Admin Login Page Styles */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+}
+
+.login-wrapper {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+.login-wrapper h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 1.8em;
+    text-align:center;
+}
+
+.head {
+    font-size: 2.8em;
+    font-weight: 600;
+    text-align:center;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #dc2626 50%, #ffffff 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 15s ease-in-out infinite, titleSlideUp 1.5s ease-out;
+    position: relative;
+}
+
+    .head::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #dc2626, #ffffff, #dc2626);
+        transform: translateX(-50%);
+        animation: underlineExpand 1.5s ease-out 0.5s both;
+    }
+
+/* Error Message */
+.error-message {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #ff6b6b;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 6px;
+        font-weight: 400;
+    }
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: rgba(220, 38, 38, 0.6);
+    }
+
+/* Login Button */
+.btn-primary {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.9), rgba(220, 38, 38, 0.7));
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, rgba(220, 38, 38, 1), rgba(220, 38, 38, 0.8));
+        transform: translateY(-1px);
+    }
+
+/* Back Link */
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .back-link a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+        .back-link a:hover {
+            color: rgba(220, 38, 38, 0.8);
+        }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .login-wrapper {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+}

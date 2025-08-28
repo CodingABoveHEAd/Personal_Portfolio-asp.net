@@ -7,25 +7,25 @@
 }
 
 <div class="skills-container">
-    <!-- Skills Header -->
+   
     <div class="skills-header">
         <h2>My Skills</h2>
     </div>
 
-    <!-- Skills Grid -->
+
     <div class="skills-grid">
         @foreach (var skill in Model)
         {
             <div class="skill-item">
                 <div class="skills-decorator"></div>
 
-                <!-- Skill Label and Percentage -->
+               
                 <div class="skill-label">
                     <span>@skill.Name</span>
                     <span class="skill-percentage">@skill.Level%</span>
                 </div>
 
-                <!-- Progress Bar -->
+             
                 <div class="progress-container">
                     <div class="progress-bar" style="--progress-width: @skill.Level%;"></div>
                 </div>

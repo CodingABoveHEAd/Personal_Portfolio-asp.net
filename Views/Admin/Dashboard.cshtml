@@ -2,15 +2,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Admin Dashboard";
 }
-<h2>Admin Dashboard</h2>
 
-<p>Total Projects: <strong>@ViewBag.ProjectCount</strong></p>
-<p>Total Contact Messages: <strong>@ViewBag.MessageCount</strong></p>
+@section Styles {
+    <link href="~/Content/Dashboard.css" rel="stylesheet" />
+}
 
-<p>
-    @Html.ActionLink("Manage Projects", "Projects", "Admin", null, new { @class = "btn btn-primary" })
-    @Html.ActionLink("View Messages", "Messages", "Admin", null, new { @class = "btn btn-secondary", style = "margin-left:10px;" })
-</p>
-<p>
-    @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "btn btn-link" })
-</p>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+        <h2>Admin Dashboard</h2>
+    </div>
+
+    <div class="stats-section">
+        <div class="stat-card">
+            <p>Total Projects</p>
+            <strong>@ViewBag.ProjectCount</strong>
+        </div>
+
+        <div class="stat-card">
+            <p>Contact Messages</p>
+            <strong>@ViewBag.MessageCount</strong>
+        </div>
+    </div>
+
+    <div class="actions-section">
+        <p>
+            @Html.ActionLink("Manage Projects", "Projects", "Admin", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("View Messages", "Messages", "Admin", null, new { @class = "btn btn-secondary" })
+        </p>
+    </div>
+
+    <div class="logout-section">
+        <p>
+            @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "btn btn-link" })
+        </p>
+    </div>
+
+</div>

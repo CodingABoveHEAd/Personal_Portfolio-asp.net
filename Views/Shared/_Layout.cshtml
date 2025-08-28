@@ -14,16 +14,14 @@
         <div class="particle"></div>
     </div>
 
-    <!-- Navbar -->
     <header>
         <nav>
-            <ul>
+            <ul class="navbar">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Education", "Index", "Education")</li>
                 <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
                 <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
                 <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
-
                 @if (Session["IsAdmin"] as bool? == true)
                 {
                     <li>@Html.ActionLink("Admin", "Dashboard", "Admin")</li>
@@ -37,10 +35,12 @@
         </nav>
     </header>
 
-    <!-- Main content -->
-    <div class="container">
-        <div class="minimal-accent"></div>
-        @RenderBody()
+    <div class="page-wrapper">
+        <!-- Main content -->
+        <div class="container">
+            <div class="minimal-accent"></div>
+            @RenderBody()
+        </div>
     </div>
 
     <!-- Footer -->

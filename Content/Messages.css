@@ -1,0 +1,180 @@
+﻿/* Messages Container */
+.messages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Messages Header */
+.messages-header h2 {
+    color: #ffffff;
+    font-size: 2.2em;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #dc2626 50%, #ffffff 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(107, 114, 128, 0.8);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(107, 114, 128, 0.4);
+}
+
+    .btn-back:hover {
+        background: rgba(107, 114, 128, 1);
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Table Styles */
+.table-container {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    background: transparent;
+}
+
+    /* Table Header */
+    .table thead th {
+        background: rgba(220, 38, 38, 0.1);
+        color: #ffffff;
+        padding: 15px 12px;
+        text-align: left;
+        font-weight: 500;
+        border-bottom: 2px solid rgba(220, 38, 38, 0.3);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Table Body */
+    .table tbody tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+        .table tbody tr:hover {
+            background: rgba(220, 38, 38, 0.05);
+        }
+
+    .table tbody td {
+        padding: 15px 12px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        vertical-align: top;
+    }
+
+        /* Message Column Styling */
+        .table tbody td:nth-child(4) {
+            max-width: 300px;
+            word-wrap: break-word;
+            line-height: 1.5;
+        }
+
+        /* ID Column */
+        .table tbody td:first-child {
+            color: #dc2626;
+            font-weight: 500;
+        }
+
+        /* Email Column */
+        .table tbody td:nth-child(3) {
+            color: rgba(34, 197, 94, 0.8);
+        }
+
+        /* Date Column */
+        .table tbody td:last-child {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+    .empty-state p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .messages-container {
+        padding: 20px 15px;
+    }
+
+    .messages-header h2 {
+        font-size: 1.8em;
+    }
+
+    .table-container {
+        padding: 15px;
+        margin: 0 -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+        .table thead th,
+        .table tbody td {
+            padding: 10px 8px;
+        }
+
+            /* Hide less important columns on mobile */
+            .table thead th:first-child,
+            .table tbody td:first-child {
+                display: none;
+            }
+
+            .table tbody td:nth-child(4) {
+                max-width: 200px;
+            }
+}
+
+@media (max-width: 480px) {
+    .table {
+        font-size: 11px;
+    }
+
+        .table thead th,
+        .table tbody td {
+            padding: 8px 6px;
+        }
+
+            .table tbody td:nth-child(4) {
+                max-width: 150px;
+            }
+}

@@ -208,7 +208,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Contact1.css" />
+    <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Education.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Messages.css" />
     <Content Include="Content\Projects.css" />
     <Content Include="Content\Skills.css" />
     <Content Include="favicon.ico" />

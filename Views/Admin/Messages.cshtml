@@ -3,27 +3,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Contact Messages";
 }
-<h2>Contact Messages</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Created</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var m in Model)
-        {
-            <tr>
-                <td>@m.Id</td>
-                <td>@m.Name</td>
-                <td>@m.Email</td>
-                <td>@m.Message</td>
-            </tr>
-        }
-    </tbody>
-</table>
+@section Styles {
+    <link href="~/Content/Messages.css" rel="stylesheet" />
+}
+
+<div class="messages-container">
+
+
+
+    <div class="messages-header">
+        <h2>Contact Messages</h2>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        @*<th>Created</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>@m.Id</td>
+                            <td>@m.Name</td>
+                            <td>@m.Email</td>
+                            <td>@m.Message</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="back-button">
+            @Html.ActionLink("← Back to Dashboard", "Dashboard", "Admin", null, new { @class = "btn-back" })
+        </div>
+    }
+    else
+    {
+        <div class="table-container">
+            <div class="empty-state">
+                <p>No contact messages found.</p>
+                @Html.ActionLink("Back to Dashboard", "Dashboard", "Admin", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    }
+
+</div>

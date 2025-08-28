@@ -734,6 +734,10 @@ footer p {
     }
 }
 
+.head {
+
+}
+
 /* Focus states for accessibility */
 .navbar li a:focus,
 .profile-image:focus {

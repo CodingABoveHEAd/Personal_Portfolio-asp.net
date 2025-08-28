@@ -3,7 +3,12 @@
     ViewBag.Title = "Admin Login";
     var returnUrl = Request["returnUrl"];
 }
-<h2>Admin Login</h2>
+
+@section Styles {
+    <link href="~/Content/Login.css" rel="stylesheet" />
+}
+
+<h1 class="head">Admin Login</h1>
 
 @if (ViewBag.Error != null)
 {
@@ -23,13 +28,13 @@
         <input name="password" type="password" class="form-control" required />
     </div>
 
-   
-        
-            if (!string.IsNullOrEmpty(returnUrl))
-            {
-                @:<input type="hidden" name="returnUrl" value="@returnUrl" />
-            }
-        
 
-        <button type="submit" class="btn btn-primary">Login</button>
+
+    if (!string.IsNullOrEmpty(returnUrl))
+    {
+        @:<input type="hidden" name="returnUrl" value="@returnUrl" />
     }
+
+
+    <button type="submit" class="btn btn-primary">Login</button>
+}
