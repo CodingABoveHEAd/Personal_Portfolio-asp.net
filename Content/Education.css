@@ -174,7 +174,7 @@
 .education-list li {
     position: relative;
     margin-bottom: 60px;
-    padding: 30px 40px;
+    padding: 10px 15px;
     background: rgba(20, 20, 20, 0.7);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -295,6 +295,7 @@
     margin-bottom: 15px;
     line-height: 1.5;
     letter-spacing: 0.3px;
+    text-align:left;
 }
 
 .education-list li span {
@@ -309,6 +310,7 @@
     display: inline-block;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    margin-bottom:10px;
 }
 
 .education-list li:hover span {
@@ -317,14 +319,13 @@
     border-color: rgba(220, 38, 38, 0.6);
 }
 
-/* No Education Records Message */
 .education-list p {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.6);
     text-align: center;
-    padding: 60px 0;
+    padding: 10px 0;
     font-style: italic;
     letter-spacing: 0.5px;
 }
@@ -363,7 +364,7 @@
     }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .education-section {
         padding: 60px 20px;
@@ -377,7 +378,7 @@
             margin-bottom: 40px;
         }
 
-    /* Single column layout for mobile */
+   
     .education-list ul::before {
         left: 30px;
     }
@@ -444,13 +445,13 @@
         }
 }
 
-/* Accessibility Focus States */
+
 .education-list li:focus-within {
     outline: 2px solid rgba(220, 38, 38, 0.6);
     outline-offset: 4px;
 }
 
-/* Scroll Animation Trigger */
+
 @media (prefers-reduced-motion: no-preference) {
     .education-list li {
         animation-play-state: paused;
@@ -486,7 +487,6 @@
 }
 
     .education-list li h3,
-    .education-list li p,
     .education-list li span {
         color: #fff !important; 
     }
