@@ -211,6 +211,8 @@
     <Content Include="Content\Contact1.css" />
     <Content Include="Content\Create.css" />
     <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\Delete.css" />
+    <Content Include="Content\Details.css" />
     <Content Include="Content\Edit.css" />
     <Content Include="Content\Education.css" />
     <Content Include="Content\Login.css" />

@@ -3,14 +3,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Project Details";
 }
-<h2>Project Details</h2>
-<dl class="dl-horizontal">
-    <dt>Id</dt>
-    <dd>@Model.Id</dd>
-    <dt>Title</dt>
-    <dd>@Model.Title</dd>
-    <dt>Description</dt>
-    <dd>@Model.Description</dd>
-    
-</dl>
-<p>@Html.ActionLink("Back", "Projects", "Admin", null, new { @class = "btn btn-link" })</p>
+
+@section Styles {
+    <link href="~/Content/Details.css" rel="stylesheet" />
+}
+
+<div class="project-details-container">
+    <div class="project-details-header">
+        <h2>Project Details</h2>
+        <div class="header-accent"></div>
+    </div>
+
+    <div class="project-details-card">
+        <div class="detail-item">
+            <dt class="detail-label">Project ID</dt>
+            <dd class="detail-value">@Model.Id</dd>
+        </div>
+
+        <div class="detail-item">
+            <dt class="detail-label">Title</dt>
+            <dd class="detail-value">@Model.Title</dd>
+        </div>
+
+        <div class="detail-item">
+            <dt class="detail-label">Description</dt>
+            <dd class="detail-value description">@Model.Description</dd>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        @Html.ActionLink("← Back to Projects", "Projects", "Admin", null, new { @class = "btn-back" })
+    </div>
+</div>
+
