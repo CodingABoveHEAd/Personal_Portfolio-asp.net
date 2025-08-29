@@ -1,11 +1,11 @@
 ﻿
 .education-section {
-    max-width: 1000px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 80px 40px;
     background: rgba(15, 15, 15, 0.8);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(220, 38, 38, 0.2);
+/*    border: 1px solid rgba(220, 38, 38, 0.2);*/
     position: relative;
     overflow: hidden;
     animation: containerSlideUp 1.2s ease-out;
@@ -449,12 +449,12 @@
 }
 
 .education-section {
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 80px 40px;
     background: rgba(15, 15, 15, 0.8);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(220, 38, 38, 0.2);
+/*    border: 1px solid rgba(220, 38, 38, 0.2);*/
     position: relative;
     overflow: hidden;
     animation: containerSlideUp 1.2s ease-out; 

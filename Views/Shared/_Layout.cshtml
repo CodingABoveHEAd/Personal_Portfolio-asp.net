@@ -3,9 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Personal Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-VtI4vAZGykZfciHFh6Mzjl0g/8WwoUB8QscU0Pjqv7VfHkZbVf+G6RMCKWe+L9aW9TjYwbtw6WwOgKm2VnnG0A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Site CSS -->
     <link href="~/Content/Site.css" rel="stylesheet" />
     @RenderSection("Styles", required: false)
 </head>
+
 <body>
     <!-- Floating particles -->
     <div class="floating-particles">
@@ -15,24 +23,31 @@
     </div>
 
     <header>
-        <nav>
-            <ul class="navbar">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Education", "Index", "Education")</li>
-                <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
-                <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
-                <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
-                @if (Session["IsAdmin"] as bool? == true)
-                {
-                    <li>@Html.ActionLink("Admin", "Dashboard", "Admin")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                }
-                else
-                {
-                    <li>@Html.ActionLink("Admin", "Login", "Account")</li>
-                }
-            </ul>
-        </nav>
+        <div class="header-container">
+            <!-- Portfolio Name/Logo -->
+            <a href="#" class="portfolio-logo">Niloy Chowdhury</a>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="navbar">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Education", "Index", "Education")</li>
+                    <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
+                    <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+
+                    @if (Session["IsAdmin"] as bool? == true)
+                    {
+
+                        <li>@Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "btn-admin btn-logout" })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Admin", "Login", "Account", null, new { @class = "btn-admin" })</li>
+                    }
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <div class="page-wrapper">
@@ -45,8 +60,30 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; @DateTime.Now.Year - Niloy Chowdhury Portfolio</p>
+        <div class="footer-content">
+            <p class="footer-text">&copy; @DateTime.Now.Year - Niloy Chowdhury Portfolio</p>
+
+            <div class="social-links">
+                <a href="https://github.com/CodingABoveHEAd/" class="social-link" title="GitHub" target="_blank">
+                    <img src="https://img.favpng.com/19/25/9/scalable-vector-graphics-github-computer-icons-logo-computer-file-png-favpng-GRYRADbE9437SkThu9hB2QtbQ.jpg" alt="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/niloy-chowdhury-9301ba374/" class="social-link" title="LinkedIn" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvLlg3M8Rnk42lyxbHoT-_7HpB1Q1Opz8eRA&s" alt="LinkedIn" />
+                </a>
+                <a href="https://wa.me/8801627242435" class="social-link" title="whatsapp" target="_blank">
+                    <img src="https://toppng.com/uploads/preview/whatsapp-logo-png-free-11662156034atpyo7qnu4.png" alt="WhatsApp" />
+                </a>
+                <a href="mailto:chowdhuryniloy819@gmail.com" class="social-link" title="Email">
+                    <img src="https://img.favpng.com/3/19/25/gmail-icon-gmail-logo-in-iconic-colors-YnPpAcfN_t.jpg" alt="Email" />
+                </a>
+                <a href="https://www.facebook.com/nilaya.caudhuri.855869" class="social-link" title="Facebook" target="_blank">
+                    <img src="https://toppng.com/uploads/preview/facebook-darkblue-01-facebook-icon-small-11563255210muq5fcu8vc.png" alt="Facebook" />
+                </a>
+            </div>
+
+        </div>
     </footer>
+
 
     @RenderSection("Scripts", required: false)
 </body>
