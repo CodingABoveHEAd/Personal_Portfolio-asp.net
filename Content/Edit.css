@@ -1,0 +1,200 @@
+﻿/* Admin Edit Project Page Styles */
+
+.edit-project-header h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, #dc2626 50%, #ffffff 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 15s ease-in-out infinite, titleSlideUp 1.5s ease-out;
+    position: relative;
+    text-align: center;
+}
+
+    .edit-project-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #dc2626, #ffffff, #dc2626);
+        transform: translateX(-50%);
+        animation: underlineGrow 1.5s ease-out 0.8s both;
+        border-radius: 2px;
+    }
+
+/* Form Container */
+.form-container {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+/* Validation Summary */
+.validation-summary-errors {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #ff6b6b;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+    .validation-summary-errors ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .validation-summary-errors li {
+        margin-bottom: 5px;
+    }
+
+/* Form Groups */
+.editor-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.editor-field {
+    margin-bottom: 20px;
+}
+
+    /* Input Fields */
+    .editor-field input[type="text"],
+    .editor-field input[type="email"],
+    .editor-field input[type="url"],
+    .editor-field textarea,
+    .editor-field select {
+        width: 100%;
+        padding: 12px 16px;
+        background: rgba(30, 30, 30, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        color: #ffffff;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+        font-family: inherit;
+    }
+
+    .editor-field textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+        .editor-field input:focus,
+        .editor-field textarea:focus,
+        .editor-field select:focus {
+            outline: none;
+            border-color: rgba(220, 38, 38, 0.6);
+        }
+
+        .editor-field input::placeholder,
+        .editor-field textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+/* Field Validation Errors */
+.field-validation-error {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-validation-error {
+    border-color: rgba(220, 38, 38, 0.6) !important;
+    background: rgba(220, 38, 38, 0.05);
+}
+
+/* Button Section */
+.button-section {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Update Button */
+.btn-primary {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.9), rgba(220, 38, 38, 0.7));
+    color: #ffffff;
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, rgba(220, 38, 38, 1), rgba(220, 38, 38, 0.8));
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Back Button */
+.btn-link {
+    padding: 12px 24px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+    .btn-link:hover {
+        color: #dc2626;
+        border-color: rgba(220, 38, 38, 0.4);
+        text-decoration: none;
+    }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .edit-project-container {
+        padding: 20px 15px;
+    }
+
+    .edit-project-header h2 {
+        font-size: 1.8em;
+    }
+
+    .form-container {
+        padding: 20px;
+        margin: 0 -15px 20px -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .button-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-link {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+}

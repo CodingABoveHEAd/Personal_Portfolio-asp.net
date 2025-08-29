@@ -1,0 +1,288 @@
+﻿/* Admin Projects Page Styles */
+
+/* Projects Container */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+
+    .projects-header h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #ffffff 0%, #dc2626 50%, #ffffff 100%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: textShimmer 15s ease-in-out infinite, titleSlideUp 1.5s ease-out;
+        position: relative;
+        text-align: center;
+    }
+
+        .projects-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ffffff, #dc2626);
+            transform: translateX(-50%);
+            animation: underlineGrow 1.5s ease-out 0.8s both;
+            border-radius: 2px;
+        }
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(107, 114, 128, 0.8);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(107, 114, 128, 0.4);
+}
+
+    .btn-back:hover {
+        background: rgba(107, 114, 128, 1);
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Create Button */
+.btn-success {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(34, 197, 94, 0.7));
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+    .btn-success:hover {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 1), rgba(34, 197, 94, 0.8));
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Create Button Section */
+.create-section {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+/* Table Styles */
+.table-container {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    background: transparent;
+}
+
+    /* Table Header */
+    .table thead th {
+        background: rgba(220, 38, 38, 0.1);
+        color: #ffffff;
+        padding: 15px 12px;
+        text-align: left;
+        font-weight: 500;
+        border-bottom: 2px solid rgba(220, 38, 38, 0.3);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+        .table thead th:last-child {
+            text-align: center;
+            width: 200px;
+        }
+
+    /* Table Body */
+    .table tbody tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+        .table tbody tr:hover {
+            background: rgba(220, 38, 38, 0.05);
+        }
+
+    .table tbody td {
+        padding: 15px 12px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+        /* ID Column */
+        .table tbody td:first-child {
+            color: #dc2626;
+            font-weight: 500;
+            width: 80px;
+        }
+
+        /* Title Column */
+        .table tbody td:nth-child(2) {
+            font-weight: 500;
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+
+        /* Actions Column */
+        .table tbody td:last-child {
+            text-align: center;
+        }
+
+/* Action Links */
+.action-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.action-link {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Edit Link */
+.action-edit {
+    background: rgba(59, 130, 246, 0.8);
+    color: #ffffff;
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+    .action-edit:hover {
+        background: rgba(59, 130, 246, 1);
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Details Link */
+.action-details {
+    background: rgba(107, 114, 128, 0.8);
+    color: #ffffff;
+    border-color: rgba(107, 114, 128, 0.4);
+}
+
+    .action-details:hover {
+        background: rgba(107, 114, 128, 1);
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Delete Link */
+.action-delete {
+    background: rgba(220, 38, 38, 0.8);
+    color: #ffffff;
+    border-color: rgba(220, 38, 38, 0.4);
+}
+
+    .action-delete:hover {
+        background: rgba(220, 38, 38, 1);
+        transform: translateY(-1px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+    .empty-state p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 20px 15px;
+    }
+
+    .projects-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+        .projects-header h2 {
+            font-size: 1.8em;
+        }
+
+    .create-section {
+        text-align: center;
+    }
+
+    .table-container {
+        padding: 15px;
+        margin: 0 -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .table thead th:first-child,
+    .table tbody td:first-child {
+        display: none;
+    }
+
+    .action-links {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .action-link {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table thead th,
+    .table tbody td {
+        padding: 10px 8px;
+    }
+
+        .table tbody td:nth-child(2) {
+            max-width: 150px;
+        }
+}

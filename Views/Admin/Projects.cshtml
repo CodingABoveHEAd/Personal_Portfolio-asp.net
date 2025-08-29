@@ -3,30 +3,64 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Manage Projects";
 }
-<h2>Manage Projects</h2>
 
-<p>@Html.ActionLink("Create New Project", "Create", "Projects", null, new { @class = "btn btn-success" })</p>
+@section Styles {
+    <link href="~/Content/Admin-Project.css" rel="stylesheet" />
+}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var p in Model)
-        {
-            <tr>
-                <td>@p.Id</td>
-                <td>@p.Title</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", "Projects", new { id = p.Id }, null) |
-                    @Html.ActionLink("Details", "Details", "Projects", new { id = p.Id }, null) |
-                    @Html.ActionLink("Delete", "Delete", "Projects", new { id = p.Id }, null)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="projects-container">
+
+
+
+    <div class="projects-header">
+        <h2>Manage Projects</h2>
+    </div>
+
+    <div class="create-section">
+        @Html.ActionLink("+ Create New Project", "Create", "Projects", null, new { @class = "btn btn-success" })
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in Model)
+                    {
+                        <tr>
+                            <td>@p.Id</td>
+                            <td>@p.Title</td>
+                            <td>
+                                <div class="action-links">
+                                    @Html.ActionLink("Edit", "Edit", "Projects", new { id = p.Id }, new { @class = "action-link action-edit" })
+                                    @Html.ActionLink("Details", "Details", "Projects", new { id = p.Id }, new { @class = "action-link action-details" })
+                                    @Html.ActionLink("Delete", "Delete", "Projects", new { id = p.Id }, new { @class = "action-link action-delete" })
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="back-button">
+            @Html.ActionLink("← Back to Dashboard", "Dashboard", "Admin", null, new { @class = "btn-back" })
+        </div>
+    }
+    else
+    {
+        <div class="table-container">
+            <div class="empty-state">
+                <p>No projects found.</p>
+                @Html.ActionLink("Create Your First Project", "Create", "Projects", null, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    }
+
+</div>

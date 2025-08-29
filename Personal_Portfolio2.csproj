@@ -191,6 +191,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin-Project.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -208,7 +209,9 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Contact1.css" />
+    <Content Include="Content\Create.css" />
     <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\Edit.css" />
     <Content Include="Content\Education.css" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\Messages.css" />

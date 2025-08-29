@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace Personal_Portfolio2.Models  // <-- Add this namespace
+namespace Personal_Portfolio2.Models 
 {
     public class Project
     {
@@ -11,10 +11,8 @@ namespace Personal_Portfolio2.Models  // <-- Add this namespace
         public string Description { get; set; }
         public string Url { get; set; }
 
-        // Existing column in DB
         public string Tags { get; set; }
 
-        // Not mapped property for frontend
         [NotMapped]
         public List<string> TagsList
         {

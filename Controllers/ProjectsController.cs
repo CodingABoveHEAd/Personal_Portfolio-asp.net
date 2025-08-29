@@ -10,7 +10,7 @@ namespace Personal_Portfolio2.Controllers
     {
         private PortfolioContext db = new PortfolioContext();
 
-        // Public list (portfolio)
+        
         public ActionResult Index()
         {
             var projects = db.Projects.ToList();
