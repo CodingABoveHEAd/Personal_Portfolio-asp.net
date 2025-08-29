@@ -3,28 +3,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Create Project";
 }
-
-
 @section Styles {
     <link href="~/Content/Create.css" rel="stylesheet" />
 }
 
 <div class="edit-project-container">
-
     <div class="edit-project-header">
         <h2>Create Project</h2>
     </div>
-
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
         <div class="form-container">
-
             @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
 
-            @Html.EditorForModel()
+            <div class="editor-field">
+                @Html.LabelFor(m => m.Title, new { @class = "editor-label" })
+                @Html.TextBoxFor(m => m.Title, new { placeholder = "Enter project title" })
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "field-validation-error" })
+            </div>
 
+            <div class="editor-field">
+                @Html.LabelFor(m => m.Description, new { @class = "editor-label" })
+                @Html.TextAreaFor(m => m.Description, new { placeholder = "Enter project description", rows = 4 })
+                @Html.ValidationMessageFor(m => m.Description, "", new { @class = "field-validation-error" })
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(m => m.Url, new { @class = "editor-label" })
+                @Html.TextBoxFor(m => m.Url, new { placeholder = "Enter project URL" })
+                @Html.ValidationMessageFor(m => m.Url, "", new { @class = "field-validation-error" })
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(m => m.Tags, new { @class = "editor-label" })
+                @Html.TextBoxFor(m => m.Tags, new { placeholder = "Enter tags separated by commas" })
+                @Html.ValidationMessageFor(m => m.Tags, "", new { @class = "field-validation-error" })
+            </div>
         </div>
 
         <div class="button-section">
@@ -32,5 +47,9 @@
             @Html.ActionLink("Cancel", "Projects", "Admin", null, new { @class = "btn-link" })
         </div>
     }
-
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -2,19 +2,32 @@
     ViewBag.Title = "Home";
 }
 
-<!-- Hero Section with Profile Image -->
 <div class="hero-section">
     <div class="profile-image-container">
-        <img src="https://media.istockphoto.com/id/594935778/photo/want-to-be-a-success-suit-up-and-show-up.jpg?s=612x612&w=0&k=20&c=vzCtblM7LmP92NGPN9LGjEKFm5Qv4TlFJIyl7ocqw7A=" alt="Niloy Chowdhury" class="profile-image" />
+        <div class="image-glow-effect"></div>
+        <img src="~/Content/Images/portfolio.jpg" alt="Niloy Chowdhury" class="profile-image" />
+        <div class="image-border-accent"></div>
     </div>
-    <h1>Niloy Chowdhury</h1>
-    <h3>Professional Developer & Creative Thinker</h3>
+    <div class="hero-content">
+        <h1>Niloy Chowdhury</h1>
+        <p class="hero-subtitle">Professional Developer & Creative Thinker</p>
+        <div class="hero-description">
+            <p>Passionate about creating innovative solutions and bringing ideas to life through code.</p>
+        </div>
+        <div class="cv-download-section">
+            <a href="~/Content/CV/NiloyChowdhury_CV.pdf" download="NiloyChowdhury_CV.pdf" class="btn-download-cv">
+                <span class="download-icon">📄</span>
+                Download CV
+            </a>
+        </div>
+    </div>
 </div>
 
-<div style="padding: 40px 0; text-align: center; color: #666;">
-    <h2 style="margin-bottom: 20px; color: #333;">Welcome to My Portfolio</h2>
-    <p style="font-size: 1.1em; max-width: 600px; margin: 0 auto; line-height: 1.8;">
-        Passionate about creating innovative solutions and bringing ideas to life through code.
+<div class="content-section">
+    <h2>Welcome to My Portfolio</h2>
+    <p>
         Explore my journey, skills, and projects that showcase my dedication to excellence in development.
+        Each project represents a commitment to quality, innovation, and user-centered design.
     </p>
 </div>
+

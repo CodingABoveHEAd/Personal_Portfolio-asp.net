@@ -149,6 +149,14 @@
     <Compile Include="Migrations\202508260341205_AddProjectTags.Designer.cs">
       <DependentUpon>202508260341205_AddProjectTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202508290537181_makeIdIdentity.cs" />
+    <Compile Include="Migrations\202508290537181_makeIdIdentity.Designer.cs">
+      <DependentUpon>202508290537181_makeIdIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202508290542100_MakeProjectIdIdentity.cs" />
+    <Compile Include="Migrations\202508290542100_MakeProjectIdIdentity.Designer.cs">
+      <DependentUpon>202508290542100_MakeProjectIdIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -215,6 +223,7 @@
     <Content Include="Content\Details.css" />
     <Content Include="Content\Edit.css" />
     <Content Include="Content\Education.css" />
+    <Content Include="Content\Images\portfolio.jpg" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\Messages.css" />
     <Content Include="Content\Projects.css" />
@@ -245,6 +254,7 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\CV\NiloyChowdhury_CV.pdf" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -285,7 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -320,6 +329,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202508260341205_AddProjectTags.resx">
       <DependentUpon>202508260341205_AddProjectTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202508290537181_makeIdIdentity.resx">
+      <DependentUpon>202508290537181_makeIdIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202508290542100_MakeProjectIdIdentity.resx">
+      <DependentUpon>202508290542100_MakeProjectIdIdentity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
