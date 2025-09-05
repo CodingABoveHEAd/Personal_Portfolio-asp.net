@@ -12,8 +12,9 @@ namespace Personal_Portfolio2.Controllers
 
         public ActionResult Dashboard()
         {
-            ViewBag.ProjectCount = db.Projects.Count();
-            ViewBag.MessageCount = db.ContactMessages.Count();
+           //count
+            ViewBag.ProjectCount = db.Database.SqlQuery<int>("SELECT COUNT(*) FROM Projects").FirstOrDefault();
+            ViewBag.MessageCount = db.Database.SqlQuery<int>("SELECT COUNT(*) FROM ContactMessages").FirstOrDefault();
             return View();
         }
 

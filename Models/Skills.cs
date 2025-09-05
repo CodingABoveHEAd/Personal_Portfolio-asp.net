@@ -14,7 +14,7 @@ namespace Personal_Portfolio2.Models
         [Required]
         public string Name { get; set; }
 
-        public int Level { get; set; } //in %
+        public int Level { get; set; } 
     }
 }
 

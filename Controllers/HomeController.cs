@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Personal_Portfolio2.Models;
+using System.Collections.Generic;
 
 namespace Personal_Portfolio2.Controllers
 {
@@ -10,8 +11,6 @@ namespace Personal_Portfolio2.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Skills = db.Skills.ToList();
-            ViewBag.Educations = db.Educations.ToList();
             return View();
         }
     }
