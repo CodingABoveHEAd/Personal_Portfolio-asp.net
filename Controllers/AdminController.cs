@@ -1,7 +1,8 @@
-﻿using System.Web.Mvc;
-using Personal_Portfolio2.Filters;
+﻿using Personal_Portfolio2.Filters;
 using Personal_Portfolio2.Models;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace Personal_Portfolio2.Controllers
 {
@@ -18,18 +19,21 @@ namespace Personal_Portfolio2.Controllers
             return View();
         }
 
-        // Admin list of projects
         public ActionResult Projects()
         {
-            var projects = db.Projects.ToList();
+            List<Project> projects = db.Database.SqlQuery<Project>(
+                "SELECT Id, Title, Description, Url, Tags FROM Projects"
+            ).ToList();
+
             return View(projects);
         }
 
         public ActionResult Messages()
         {
-            var msgs = db.ContactMessages
-                         .OrderByDescending(m => m.Id)
-                         .ToList();
+            List<ContactMessage> msgs = db.Database.SqlQuery<ContactMessage>(
+                "SELECT Id, Name, Email, Message,DateSent FROM ContactMessages ORDER BY Id DESC"
+            ).ToList();
+
             return View(msgs);
         }
     }
